@@ -20,9 +20,10 @@ class Employee:
     def payRaise(self, amount):
         self.__salary += amount    
     
-    def payBonus(self, percentBonus=1, min=None, max=None):
-        if (min is None or self.__salary >= min) and \
-           (max is None or self.__salary <= max):
+    def payBonus(self, percentBonus=1, min=0, max=float("Inf")):
+        if min > max:
+            raise "Don't be silly!"
+        if min <= self.__salary < max:
             self.__salary *= 1 + percentBonus / 100    
     
     def toString(self):
@@ -37,4 +38,4 @@ class Employee:
 
     @classmethod
     def setMinimumSalary(cls, s):
-        cls, __minimumSalary = s
+        cls.__minimumSalary = s
