@@ -30,3 +30,8 @@ print(aaron)
 
 aaron.log("Hello!")
 aaron.withdraw()
+
+
+num = 9
+name = "Aaron" if num < 10 else "John"
+# true_value if condition else false_value
