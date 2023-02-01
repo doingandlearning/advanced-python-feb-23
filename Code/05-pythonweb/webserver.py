@@ -19,7 +19,7 @@ class MyHandler(BaseHTTPRequestHandler):
 				result = f"<b>Dance!</b>"
 				self.wfile.write(result.encode('utf-8'))
 			else:
-				f = open(curdir + sep + self.path)
+				f = open(curdir + sep + self.path.split("/").join(sep))
 				self.send_response(200)
 				self.send_header('Content-Type', mimetypes.guess_type(self.path)[0])
 				self.end_headers()
