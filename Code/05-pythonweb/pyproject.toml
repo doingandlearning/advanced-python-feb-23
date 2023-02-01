@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "05-pythonweb"
+version = "0.1.0"
+description = ""
+authors = ["Kevin Cunningham <github@kevincunningham.co.uk>"]
+readme = "README.md"
+packages = [{include = "05_pythonweb"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.2.2"
+flask-restful = "^0.3.9"
+requests = "^2.28.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
