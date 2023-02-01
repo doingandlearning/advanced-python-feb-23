@@ -12,6 +12,7 @@ Solution folder:Labs\Solutions\OOP
  
 ## Roadmap
 There are 4 exercises in this lab, of which the last exercise is "if time permits". Here is a brief summary of the tasks you will perform in each exercise; more detailed instructions follow later:
+
 1. Defining a class and creating objects
 2. Implementing "pay bonus" functionality
 3. Adding class-wide members
