@@ -8,6 +8,13 @@ print("isEven(4) returns %s" % isEven(4))
 def negate(f):
     return lambda x: not f(x)
 
+def negate(f):
+    return not f
+
+# isOdd = lambda x,y,z: negate(is_sum_odd(x,y,z))
+
+# def negate(x, f):
+#     return not f(x)
 # define isOdd as the negation of isEven
 isOdd = negate(isEven)
 
