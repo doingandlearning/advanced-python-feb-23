@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snooker</title>
+    <link rel='stylesheet' type='text/css' href='Styles.css'/>
+
+    <script src="Sprite.js"></script>
+
+    <script src="Ball.js"></script>
+    <script src="BallPainter.js"></script>
+    <script src="BallBehaviour.js"></script>
+
+    <script src="Table.js"></script>
+    <script src="TablePainter.js"></script>
+
+    <script>
+
+        var canvas, ctx, raf;
+
+        var g = 9.81;  // Acceleration due to gravity, in metres/sec/sec.
+        var table;
+
+        function init() {
+            canvas = document.getElementById('myCanvas');
+            ctx    = canvas.getContext('2d');
+
+            raf = window.requestAnimationFrame       ||
+                  window.mozRequestAnimationFrame    ||
+                  window.webkitRequestAnimationFrame ||
+                  window.msRequestAnimationFrame     ||
+                  window.oRequestAnimationFrame;
+
+            table = new Table("table", new TablePainter(), []);
+
+            raf(draw);
+        }
+
+
+        function draw(tNow) {
+
+            raf(draw);      
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            table.paint(ctx);
+
+            for (var b = 0; b < table.balls.length; b++) {
+                var ball = table.balls[b];
+                ball.paint(ctx);
+                ball.update(tNow, ctx);
+            }
+
+            table.testForCollisions();
+            table.respotBalls();
+        }
+
+
+        function hitCueBall() {
+            var speed = document.getElementById("speedTextBox").value;
+            var angleDegrees = document.getElementById("angleDegreesTextBox").value;
+            table.hitCueBall(speed, angleDegrees);
+        }
+
+    </script>
+	
+</head>
+
+<body onload="init()">
+	
+    <h1>Snooker!</h1>
+  
+    <label>Initial speed (m/s):</label>
+    <input type="text" id="speedTextBox" value="4" /> <br>
+
+    <label>Angle (degrees):</label>
+    <input type="text" id="angleDegreesTextBox" value="0" /> <br>
+
+    <button onclick="hitCueBall()">Hit cue ball</button> <br>
+
+    <canvas id="myCanvas" width="1400" height="700">
+        Sorry, your browser doesn't support canvas.
+    </canvas>
+
+</body>
+</html>

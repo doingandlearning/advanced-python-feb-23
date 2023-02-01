@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CatchIt!</title>
+    <link rel='stylesheet' type='text/css' href='CatchIt.css'/>
+</head>
+
+<body>
+    <!-- The main game canvas -->
+    <canvas id='gameCanvas' width='550' height='700'>
+        Canvas not supported
+    </canvas>
+
+    <!-- A small canvas to display the lives left -->
+    <canvas id='livesCanvas' width='140' height='40'>
+        Canvas not supported
+    </canvas>
+
+    <!-- A popup panel, to display a welcome message and show game-loading progress -->
+    <div id='loadingPanel' class='panel'>
+        <h3>Welcome!</h3>
+        <p>Catch the balls before they hit the ground!</p>
+
+        <div id='loadDiv'>
+            Name: <input type='text' id='nameTextBox'/>
+            <input type='button' id='loadButton' value='Load Game'/>
+         </div>
+         <div id='progressDiv'></div>
+    </div>
+
+    <!-- A small panel (top-left of screen) to display current score -->
+    <div id='scorePanel' class='panel'></div>
+
+    <!-- A small panel (top-centre of screen) to display "paused" message -->
+    <div id='pausedPanel' class='panel'>Paused</div>    
+
+    <!-- A popup panel, to show game-over and score table -->
+    <div id='gameOverPanel' class='panel'>
+        <h3>Game Over</h3>
+        <p>Scores Table</p>
+        <div id='scoresListDiv'></div>
+        <input id='newGameButton' type='button' value='New Game'/>
+    </div>
+
+    <!-- Some audio files for the game, these are preloaded -->
+    <audio id='LoseLife' preload='auto'>
+        <source src='sounds/LoseLife.ogg' type='audio/ogg'>
+        <source src='sounds/LoseLife.mp3' type='audio/mp3'>
+    </audio>
+
+    <audio id='CatchBall' preload='auto'>
+        <source src='sounds/CatchBall.ogg' type='audio/ogg'>
+        <source src='sounds/CatchBall.mp3' type='audio/mp3'>
+    </audio>
+
+    <!-- Scripts used by the game -->
+    <script src = 'GameController.js'></script>
+    <script src = 'CatchIt.js'></script>
+    <script src = 'Sprite.js'></script>
+    <script src = 'Ball.js'></script>
+    <script src = 'Bucket.js'></script>
+
+</body>
+</html>

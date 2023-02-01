@@ -1,0 +1,14 @@
+﻿body {
+    font-family: arial, verdana, sans-serif;
+    font-size: smaller;
+}
+
+canvas {
+    border: thin solid skyblue;
+    box-shadow: 5px 5px 5px gray; 
+}
+
+label {
+    width: 150px;
+    float: left;
+}

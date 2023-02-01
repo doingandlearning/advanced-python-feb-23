@@ -1,0 +1,9 @@
+﻿body {
+    font-family: arial, verdana;
+    font-size: 12px;
+}
+   
+canvas {
+    border: 2px solid lightblue;
+    box-shadow: 5px 5px 5px gray; 
+}
