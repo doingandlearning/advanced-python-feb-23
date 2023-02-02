@@ -1,4 +1,8 @@
+To run a Flask app:
 
+```bash
+flask --app server.py --debug run 
+```
 
 ## Exercise 1: Create a Hello World
 
