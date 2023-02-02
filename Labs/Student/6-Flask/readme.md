@@ -45,3 +45,10 @@ class UserList(Resource):
 Add a function that will run before every request. It should check for the existence of an authentication header and test the value against a hard-coded one.
 
 Note: In production we should have secret data like this stored in environment variables outside of source control.
+
+## Optional Exercise 5: 
+
+Create a proxy to Geolocate by IP address.
+
+Here's the URL: 
+https://ipgeolocation.abstractapi.com/v1/?api_key=40f78db40af64d159e2a83ebd1ba5bdb&127.0.0.1
