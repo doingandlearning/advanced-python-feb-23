@@ -22,3 +22,6 @@ def generate_mandelbrot(size, iterations):
 	ax.imshow(np.log(col), cmap=plt.cm.hot)
 	ax.set_axis_off()
 	plt.show()
+
+if __name__ == "__main__":
+	generate_mandelbrot(100,100)

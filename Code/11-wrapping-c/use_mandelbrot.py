@@ -1,3 +1,3 @@
 from mandelbrot import *
 
-generate_mandelbrot(100,100)
+mandelbrot.generate_mandelbrot(1,1)
