@@ -23,6 +23,7 @@ class User(db.Model):
     email = db.Column(db.String, unique=True, nullable=False)
     password_hashed = db.Column(db.String(128), nullable=False)
     registered_on = db.Column(db.DateTime, nullable=True)
+    role = db.Column(db.String(128), nullable=False)
 
     def __init__(self, email: str, password_plaintext: str):
         """Create a new User object using the email address and hashing the
@@ -31,6 +32,7 @@ class User(db.Model):
         self.email = email
         self.password_hashed = self._generate_password_hash(password_plaintext)
         self.registered_on = datetime.now()
+        self.role = "user"
 
     def is_password_correct(self, password_plaintext: str):
         return check_password_hash(self.password_hashed, password_plaintext)
