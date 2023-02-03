@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user_profile_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>Status</h1>
+
+<div class="card">
+  <div class="card-heading">
+    <h2>Application Status</h2>
+  </div>
+  <div class="card-body">
+    <p>DATABASE_URL: {{ database_url }}</p>
+    <p>CONFIG_TYPE: {{ config_type }}</p>
+    <p>SQLALCHEMY_DATABASE_URI: {{ sqlalchemy_database_uri }}</p>
+    <p>LOG_TO_STDOUT: {{ log_to_stdout }}</p>
+    <p>Database initialized: {{ database_initialized }}</p>
+  </div>
+</div>
+{% endblock %}
